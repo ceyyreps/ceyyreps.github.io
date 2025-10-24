@@ -1,15 +1,23 @@
-document.getElementById('year').textContent = new Date().getFullYear();
+// shared small scripts
+document.getElementById('year')?.textContent = new Date().getFullYear();
 
-document.getElementById('greetBtn').addEventListener('click', () => {
-  const now = new Date();
-  const hours = now.getHours();
-  const part = hours < 12 ? 'morning' : hours < 18 ? 'afternoon' : 'evening';
-  document.getElementById('greetOutput').textContent = `Good ${part}! Thanks for visiting my site.`;
-});
+// simple quick message handler on contact page
+const quick = document.getElementById('quickMsg');
+if(quick){
+  quick.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    const name = document.getElementById('fname').value.trim();
+    const item = document.getElementById('item').value.trim();
+    const out = document.getElementById('msgResult');
+    out.textContent = `Thanks ${name}! We received your interest for "${item}". We'll contact you on WhatsApp.`;
+    quick.reset();
+  });
+}
 
-document.getElementById('contactForm').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const name = document.getElementById('name').value.trim();
-  document.getElementById('contactResult').textContent = `Thanks, ${name}! This is a demo form — no message was sent.`;
-  e.target.reset();
+// simple add-to-cart demo (no backend)
+document.addEventListener('click', e=>{
+  if(e.target.matches('.btn.add')){
+    const id = e.target.dataset.id;
+    alert('Added item '+id+' to cart (demo). Contact via WhatsApp to complete the order.');
+  }
 });

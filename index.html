@@ -3,38 +3,88 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ceyyreps — Official Site</title>
+  <title>Ceyyy Reps – Shoes • Jerseys • Streetwear</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <h1>Welcome to Ceyyreps</h1>
-    <p class="tag">My first free website — powered by GitHub Pages</p>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">CR</div>
+      <div class="title">Ceyyy Reps</div>
+    </div>
+    <nav class="nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="contact-cta">
+      <a href="tel:+14375804380">+1 (437) 580‑4380</a>
+    </div>
   </header>
 
-  <main class="container">
-    <section class="card">
-      <h2>About Me</h2>
-      <p>Hey! This is my site. I’m building it using HTML, CSS, and JavaScript — and hosting it totally for free. More updates coming soon!</p>
-      <button id="greetBtn">Say Hi</button>
-      <p id="greetOutput" class="muted"></p>
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Premium reps. Clean style.</h1>
+        <p>Curated sneakers, jerseys, and streetwear — black & gold drops.</p>
+        <a class="btn" href="shop.html">Shop Now</a>
+      </div>
+      <div class="hero-image">
+        <img src="https://via.placeholder.com/800x500?text=Featured+Drop" alt="Featured drop">
+      </div>
     </section>
 
-    <section class="card">
-      <h2>Contact</h2>
-      <p>You can reach out to me by email or socials once I add them here.</p>
-      <form id="contactForm">
-        <input type="text" id="name" placeholder="Your name" required />
-        <input type="email" id="email" placeholder="Email" required />
-        <textarea id="message" placeholder="Message" rows="4" required></textarea>
-        <button type="submit">Send (demo)</button>
-      </form>
-      <p id="contactResult" class="muted"></p>
+    <section class="features">
+      <article>
+        <h3>Fast shipping</h3>
+        <p>Quick processing and tracked delivery.</p>
+      </article>
+      <article>
+        <h3>Secure payment</h3>
+        <p>Buy with confidence — multiple payment options.</p>
+      </article>
+      <article>
+        <h3>Authentic style</h3>
+        <p>Hand-picked items that look right.</p>
+      </article>
+    </section>
+
+    <section class="grid-preview">
+      <h2>Featured</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="https://via.placeholder.com/400x300?text=Sneaker+1" alt="Sneaker">
+          <h4>Black Runner</h4>
+          <p class="price">$120</p>
+          <a href="shop.html" class="outline">View</a>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/400x300?text=Jersey+1" alt="Jersey">
+          <h4>Gold Jersey</h4>
+          <p class="price">$55</p>
+          <a href="shop.html" class="outline">View</a>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/400x300?text=Hoodie+1" alt="Hoodie">
+          <h4>Street Hoodie</h4>
+          <p class="price">$70</p>
+          <a href="shop.html" class="outline">View</a>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <small>© <span id="year"></span> Ceyyreps. All rights reserved.</small>
+  <footer class="footer">
+    <div>
+      <strong>Ceyyy Reps</strong>
+      <p>Reselling sneakers, jerseys & streetwear</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://wa.me/14375804380" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="mailto:hello@ceyyreps.com">Email</a>
+    </div>
+    <small>© <span id="year"></span> Ceyyy Reps</small>
   </footer>
 
   <script src="script.js"></script>

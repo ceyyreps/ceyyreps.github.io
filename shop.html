@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shop — Ceyyy Reps</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">CR</div>
+      <div class="title">Ceyyy Reps</div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html" class="active">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="contact-cta">
+      <a href="tel:+14375804380">+1 (437) 580‑4380</a>
+    </div>
+  </header>
+
+  <main class="shop-main">
+    <h1>Shop — Shoes • Jerseys • Streetwear</h1>
+
+    <div class="filters">
+      <label>Category:
+        <select id="categoryFilter">
+          <option value="all">All</option>
+          <option value="shoes">Shoes</option>
+          <option value="jerseys">Jerseys</option>
+          <option value="streetwear">Streetwear</option>
+        </select>
+      </label>
+      <label>Sort:
+        <select id="sortOrder">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: low → high</option>
+          <option value="price-desc">Price: high → low</option>
+        </select>
+      </label>
+    </div>
+
+    <div id="productGrid" class="product-grid"></div>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <strong>Ceyyy Reps</strong>
+      <p>Reselling sneakers, jerseys & streetwear</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://wa.me/14375804380" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="mailto:hello@ceyyreps.com">Email</a>
+    </div>
+    <small>© <span id="year"></span> Ceyyy Reps</small>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // sample product data (replace with real items & images)
+    const products = [
+      {id:1, title:'Black Runner', category:'shoes', price:120, img:'https://via.placeholder.com/600x450?text=Black+Runner'},
+      {id:2, title:'Gold Jersey', category:'jerseys', price:55, img:'https://via.placeholder.com/600x450?text=Gold+Jersey'},
+      {id:3, title:'Street Hoodie', category:'streetwear', price:70, img:'https://via.placeholder.com/600x450?text=Street+Hoodie'},
+      {id:4, title:'White Sneaker', category:'shoes', price:95, img:'https://via.placeholder.com/600x450?text=White+Sneaker'},
+      {id:5, title:'Retro Jersey', category:'jerseys', price:60, img:'https://via.placeholder.com/600x450?text=Retro+Jersey'},
+      {id:6, title:'Cropped Tee', category:'streetwear', price:30, img:'https://via.placeholder.com/600x450?text=Cropped+Tee'}
+    ];
+
+    // simple render
+    function renderProducts(list){
+      const grid = document.getElementById('productGrid');
+      grid.innerHTML = '';
+      list.forEach(p=>{
+        const card = document.createElement('div');
+        card.className = 'product';
+        card.innerHTML = `
+          <img src="${p.img}" alt="${p.title}">
+          <h3>${p.title}</h3>
+          <p class="price">$${p.price}</p>
+          <div class="p-actions">
+            <button class="btn add" data-id="${p.id}">Add to cart</button>
+            <a class="outline" href="contact.html">Buy / Contact</a>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // filtering & sorting
+    document.getElementById('categoryFilter').addEventListener('change', (e)=>{
+      const val = e.target.value;
+      const filtered = val === 'all' ? products : products.filter(p=>p.category===val);
+      renderProducts(filtered);
+    });
+    document.getElementById('sortOrder').addEventListener('change', (e)=>{
+      const v = e.target.value;
+      let list = [...products];
+      if(v==='price-asc') list.sort((a,b)=>a.price-b.price);
+      if(v==='price-desc') list.sort((a,b)=>b.price-a.price);
+      renderProducts(list);
+    });
+
+    // initial render
+    renderProducts(products);
+  </script>
+</body>
+</html>
