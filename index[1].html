@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ceyyreps — Official Site</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Welcome to Ceyyreps</h1>
+    <p class="tag">My first free website — powered by GitHub Pages</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>About Me</h2>
+      <p>Hey! This is my site. I’m building it using HTML, CSS, and JavaScript — and hosting it totally for free. More updates coming soon!</p>
+      <button id="greetBtn">Say Hi</button>
+      <p id="greetOutput" class="muted"></p>
+    </section>
+
+    <section class="card">
+      <h2>Contact</h2>
+      <p>You can reach out to me by email or socials once I add them here.</p>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your name" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <textarea id="message" placeholder="Message" rows="4" required></textarea>
+        <button type="submit">Send (demo)</button>
+      </form>
+      <p id="contactResult" class="muted"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year"></span> Ceyyreps. All rights reserved.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
